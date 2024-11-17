@@ -1,0 +1,11 @@
+torch
+transformers
+safetensors
+pipeline
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+streamlit
+notebook
