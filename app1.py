@@ -147,15 +147,6 @@ date_range = pd.date_range(start="2023-01-01", end="2024-11-01", freq="MS")
 
 # Generate random review counts for each product/topic
 np.random.seed(42)
-hair_colours = np.random.randint(10, 100, size=len(date_range))
-spray_deos = np.random.randint(5, 80, size=len(date_range))
-
-# Create a DataFrame to represent the data
-df_trending = pd.DataFrame({
-    'date': date_range,
-    'hair_colours': hair_colours,
-    'spray_deos': spray_deos
-})
 
 # Streamlit page layout
 def page_topic_modeling():
@@ -190,22 +181,7 @@ def page_topic_modeling():
 
     # --- Step 3: Dummy Reviews for the Products ---
     # Generating some random reviews for demonstration
-    reviews = [
-        "I love my new blonde hair colour, it's vibrant and shiny!",
-        "The floral scent of this spray deo is amazing, lasts all day long.",
-        "My brunette hair colour looks fabulous, very natural!",
-        "The citrus scent of this deo makes me feel fresh all day!",
-        "I've been using this blonde hair colour for months, and it's perfect!",
-        "This spray deo's scent is so refreshing, definitely my go-to product."
-    ]
     
-    # Creating a dummy sentiment score for the reviews for visualization
-    review_data = pd.DataFrame({
-        'review': reviews,
-        'product': ['Hair Colour', 'Spray Deo', 'Hair Colour', 'Spray Deo', 'Hair Colour', 'Spray Deo'],
-        'sentiment': np.random.choice(['Positive', 'Negative'], size=6),
-        'rating': np.random.randint(1, 6, size=6)
-    })
     
     # Plotting dummy reviews as a circle plot
     st.write("### Reviews Visualization")
@@ -299,8 +275,8 @@ def main():
     
     if page == "Introduction":
         page_intro()
-    elif page == "Topic Modeling":
-        page_topic_modeling()
+   # elif page == "Topic Modeling":
+       # page_topic_modeling()
     elif page == "Sentiment Analysis":
         page_sentiment_analysis()
     
